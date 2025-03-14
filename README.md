@@ -1,4 +1,4 @@
-# [<img src="./images/coin-flipping.png" width="50" height="50">] Coin Toss Simulator
+# <img src="./images/coin-flipping.png" width="50" height="50"> Coin Toss Simulator
 
 Welcome to the **Coin Toss Simulator**! This interactive web application allows you to simulate flipping coins with realistic animations and sound effects. Whether you're making decisions, teaching probability, or just having fun, this tool is perfect for you.
 
