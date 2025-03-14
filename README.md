@@ -1,4 +1,4 @@
-# 🎴 Coin Toss Simulator
+# ![Coin image](images/coin-flipping.png) Coin Toss Simulator
 
 Welcome to the **Coin Toss Simulator**! This interactive web application allows you to simulate flipping coins with realistic animations and sound effects. Whether you're making decisions, teaching probability, or just having fun, this tool is perfect for you.
 
@@ -86,16 +86,16 @@ This project is hosted on **Netlify**. To deploy your own version:
 
 ## 📂 Project Structure
 
-coin-toss-simulator/
-├── index.html # Main HTML file
-├── styles.css # CSS for styling and animations
-├── script.js # JavaScript for interactivity
-├── Sounds/ # Sound effects for the coin toss
-│ ├── coin-flip-shimmer.mp3
-│ └── coin-spinning.mp3
-├── images/ # Coin images
-│ ├── coin.png
-│ └── coin-flipping.png
+coin-toss-simulator/  
+├── index.html # Main HTML file  
+├── styles.css # CSS for styling and animations  
+├── script.js # JavaScript for interactivity  
+├── Sounds/ # Sound effects for the coin toss  
+│ ├── coin-flip-shimmer.mp3  
+│ └── coin-spinning.mp3  
+├── images/ # Coin images  
+│ ├── coin.png  
+│ └── coin-flipping.png  
 └── README.md # Project documentation
 
 ---
