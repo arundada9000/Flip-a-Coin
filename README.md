@@ -2,7 +2,7 @@
 
 Welcome to the **Coin Toss Simulator**! This interactive web application allows you to simulate flipping coins with realistic animations and sound effects. Whether you're making decisions, teaching probability, or just having fun, this tool is perfect for you.
 
-🌐 **Live Demo**: [https://coin-flip.netlify.app](https://coin-flip.netlify.app)
+🌐 **Live Demo**: [https://easyflipping.netlify.app](https://easyflipping.netlify.app)
 
 ---
 
@@ -36,15 +36,15 @@ Welcome to the **Coin Toss Simulator**! This interactive web application allows 
 
 1. **Toss a Single Coin**:
 
-   - Click the **🎯 Toss Coin** button to flip a single coin.
+   - Click the **Flip** button or Touch the coin to flip a single coin.
 
 2. **Add Multiple Coins**:
 
-   - Enter the number of coins in the input field and click **➕ Add Coins**.
+   - Enter the number of coins in the input field and click **+** or just click **+** to add one coin.
 
 3. **Toss All Coins**:
 
-   - Click the **🎲 Toss All Coins** button to flip all coins at once.
+   - Click the **Flip All Coins** button to flip all coins at once.
 
 4. **Switch Toss Style**:
 
@@ -93,6 +93,9 @@ coin-toss-simulator/
 ├── Sounds/ # Sound effects for the coin toss
 │ ├── coin-flip-shimmer.mp3
 │ └── coin-spinning.mp3
+├── images/ # Coin images
+│ ├── coin.png
+│ └── coin-flipping.png
 └── README.md # Project documentation
 
 ---
