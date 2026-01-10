@@ -1,4 +1,17 @@
+# robots.txt for Easy Flipping Coin Toss Simulator
+# Allow all search engines to crawl the main pages
 User-agent: *
 Allow: /
 
+# Disallow crawling of unnecessary or non-HTML files
+Disallow: /sounds/
+Disallow: /images/
+Disallow: /assets/js/
+Disallow: /node_modules/
+Disallow: /tmp/
+
+# Sitemap for faster indexing
 Sitemap: https://easyflipping.netlify.app/sitemap.xml
+
+# Optional: Crawl-delay for polite crawling (some search engines respect this)
+# Crawl-delay: 5
