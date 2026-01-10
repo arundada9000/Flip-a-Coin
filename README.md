@@ -2,11 +2,22 @@
 
 Welcome to the **Coin Toss Simulator**! This interactive web application allows you to simulate flipping coins with realistic animations and sound effects. Whether you're making decisions, teaching probability, or just having fun, this tool is perfect for you.
 
-🌐 **Live Demo**: [https://easyflipping.netlify.app](https://easyflipping.netlify.app)
+**Live Demo**: [https://easyflipping.netlify.app](https://easyflipping.netlify.app)
 
 ---
 
-## 🚀 Features
+## Preview
+
+<p align="center"> 
+<img src="./images/preview/img1.png" width=300>
+<img src="./images/preview/img2.png" width=300>
+</p>
+<p align="center"> 
+<img src="./images/preview/img3.png">
+<img src="./images/preview/img4.png">
+</p>
+
+## Features
 
 - **Realistic Coin Toss**: Simulate flipping a coin with smooth animations.
 - **Multiple Coins**: Add and toss multiple coins at once.
@@ -22,7 +33,7 @@ Welcome to the **Coin Toss Simulator**! This interactive web application allows 
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **Frontend**:
   - HTML5
@@ -32,7 +43,7 @@ Welcome to the **Coin Toss Simulator**! This interactive web application allows 
 
 ---
 
-## 🖥️ How to Use
+## How to Use
 
 1. **Toss a Single Coin**:
 
@@ -64,7 +75,7 @@ Welcome to the **Coin Toss Simulator**! This interactive web application allows 
 
 ---
 
-## 🎨 Design Highlights
+## Design Highlights
 
 - **Dynamic Background**: A gradient background that changes color over time.
 - **Realistic Coin Design**: 3D-style coins with heads and tails.
@@ -73,7 +84,7 @@ Welcome to the **Coin Toss Simulator**! This interactive web application allows 
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 This project is hosted on **Netlify**. To deploy your own version:
 
@@ -118,11 +129,33 @@ Feel Free to use it . I Arun Neupane hereby allow free use of this project.
 
 ---
 
-## 🙏 Credits
+## Credits
 
 - **Developer**: Arun Neupane
 - **Inspiration**: Built for fun and learning!
 
 ---
+
+## Contact Me
+
+Hello! 👋  
+I’m **Arun Neupane** from **Nepal 🇳🇵**.  
+Open to collaboration, coding discussions, projects, or just a friendly hello.
+
+---
+
+### Connect with Me
+
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-Chat-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/9779811420975)
+[![Facebook](https://img.shields.io/badge/Facebook-arundada9000-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/arundada9000)
+[![Instagram](https://img.shields.io/badge/Instagram-arundada9000-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/arundada9000)
+[![GitHub](https://img.shields.io/badge/GitHub-arundada9000-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/arundada9000)
+[![YouTube](https://img.shields.io/badge/YouTube-arundada9000-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@arundada9000)
+[![Email](https://img.shields.io/badge/Email-arunneupane0000@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:arunneupane0000@gmail.com)
+
+---
+
+**Location:** Nepal  
+_Let’s build something awesome together!_
 
 Enjoy flipping coins! 🎉

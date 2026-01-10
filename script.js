@@ -1,95 +1,143 @@
 const coinContainer = document.getElementById("coinContainer");
-const tossButton = document.getElementById("tossButton");
-const addCoinsButton = document.getElementById("addCoinsButton");
-const tossAllButton = document.getElementById("tossAllButton");
 const coinCountInput = document.getElementById("coinCount");
 const headsCount = document.getElementById("headsCount");
 const tailsCount = document.getElementById("tailsCount");
 const totalCoinsCount = document.getElementById("totalCoinsCount");
 const totalTossCount = document.getElementById("totalTossCount");
 const tossStyleToggle = document.getElementById("tossStyleToggle");
-const fullScreenIcon = document.getElementById("fullScreenIcon");
-const exitFullScreenIcon = document.getElementById("exitFullScreenIcon");
+const flipSound = document.getElementById("flipSound");
+const spinSound = document.getElementById("spinSound");
+const sidebar = document.getElementById("sidebar");
+const drawerToggle = document.getElementById("drawerToggle");
 
-const spinSound = document.getElementById("spin");
-const flipSound = document.getElementById("flip");
+let currentMaterial = "gold";
+let heads = 0,
+  tails = 0,
+  totalTosses = 0,
+  totalCoins = 0;
 
-fullScreenIcon.addEventListener("click", () => {
-  coinContainer.classList.add("full-screen");
-});
+drawerToggle.onclick = () => sidebar.classList.toggle("open");
 
-exitFullScreenIcon.addEventListener("click", () => {
-  coinContainer.classList.remove("full-screen");
-});
+document.getElementById("setGold").onclick = () => {
+  currentMaterial = "gold";
+  document.getElementById("setGold").classList.add("active");
+  document.getElementById("setSilver").classList.remove("active");
+};
+document.getElementById("setSilver").onclick = () => {
+  currentMaterial = "silver";
+  document.getElementById("setSilver").classList.add("active");
+  document.getElementById("setGold").classList.remove("active");
+};
 
-let heads = 0;
-let tails = 0;
-let totalTosses = 0;
-let totalCoins = 1;
+coinCountInput.onkeypress = (e) => {
+  if (e.key === "Enter") addCoins();
+};
+
+function addCoins() {
+  const count = parseInt(coinCountInput.value) || 1;
+  for (let i = 0; i < count; i++) createCoin();
+}
 
 function createCoin() {
   const coin = document.createElement("div");
-  coin.classList.add("coin");
+  coin.className = `coin ${currentMaterial}`;
   coin.innerHTML = `
-    <div class="side heads">Heads</div>
-    <div class="side tails">Tails</div>
-  `;
-  coin.addEventListener("click", () => tossCoin(coin));
+        <div class="side heads">HEADS</div>
+        <div class="side tails">TAILS</div>
+    `;
+  coin.onclick = () => tossCoin(coin);
   coinContainer.appendChild(coin);
+  totalCoins++;
   totalCoinsCount.textContent = totalCoins;
 }
 
 function tossCoin(coin) {
-  if (navigator.vibrate) {
-    navigator.vibrate(70);
-  }
-  const random = Math.random();
-  const result = random < 0.5 ? "heads" : "tails";
-  const tossStyle = tossStyleToggle.checked ? "toss" : "spin";
+  const result = Math.random() < 0.5 ? "heads" : "tails";
+  const isVertical = tossStyleToggle.checked;
+  const animationName = isVertical ? `toss-${result}` : `spin-${result}`;
+
+  const duration = isVertical ? "1.5s" : "5s";
+  const delay = isVertical ? 1500 : 5000;
+
+  isVertical ? flipSound.play() : spinSound.play();
+
   coin.style.animation = "none";
-  setTimeout(() => {
-    coin.style.animation =
-      tossStyle == "spin"
-        ? `${tossStyle} 4.7s ease-out`
-        : `${tossStyle} 1s ease-out`;
-    coin.style.zIndex = 9; // Bring the coin above everything
-    tossStyle === "spin" ? spinSound.play() : flipSound.play();
-  }, 10);
+  void coin.offsetWidth;
+
+  coin.style.animation = `${animationName} ${duration} cubic-bezier(0.1, 0, 0.2, 1) forwards`;
+
   setTimeout(() => {
     if (result === "heads") {
       heads++;
-      coin.style.transform = "rotateY(0deg)";
+      headsCount.textContent = heads;
     } else {
       tails++;
-      coin.style.transform = "rotateY(180deg)";
+      tailsCount.textContent = tails;
     }
-    headsCount.textContent = heads;
-    tailsCount.textContent = tails;
     totalTosses++;
     totalTossCount.textContent = totalTosses;
-    coin.style.zIndex = 0;
-  }, 1000);
+  }, delay);
 }
 
-function tossAllCoins() {
+document.getElementById("addCoinsButton").onclick = addCoins;
+document.getElementById("tossAllButton").onclick = () => {
+  document.querySelectorAll(".coin").forEach(tossCoin);
+};
+document.getElementById("tossButton").onclick = () => {
   const coins = document.querySelectorAll(".coin");
-  coins.forEach((coin) => tossCoin(coin));
-}
-
-tossButton.addEventListener("click", () => {
-  const coin = document.querySelector(".coin");
-  if (coin) tossCoin(coin);
-});
-
-addCoinsButton.addEventListener("click", () => {
-  const count = parseInt(coinCountInput.value) || 1;
-  for (let i = 0; i < count; i++) {
-    createCoin();
-    totalCoins++;
-  }
-  totalCoinsCount.textContent = totalCoins;
-});
-
-tossAllButton.addEventListener("click", tossAllCoins);
+  if (coins.length) tossCoin(coins[coins.length - 1]);
+};
 
 createCoin();
+
+const fullScreenBtn = document.getElementById("fullScreenIcon");
+const exitFullScreenBtn = document.getElementById("exitFullScreenIcon");
+const appFrame = document.getElementById("appFrame");
+
+// Function to Enter Fullscreen
+fullScreenBtn.onclick = () => {
+  if (appFrame.requestFullscreen) {
+    appFrame.requestFullscreen();
+  } else if (appFrame.webkitRequestFullscreen) {
+    /* Safari */
+    appFrame.webkitRequestFullscreen();
+  } else if (appFrame.msRequestFullscreen) {
+    /* IE11 */
+    appFrame.msRequestFullscreen();
+  }
+};
+
+// Function to Exit Fullscreen
+exitFullScreenBtn.onclick = () => {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) {
+    /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    /* IE11 */
+    document.msExitFullscreen();
+  }
+};
+
+// Listen for Fullscreen Change (Handles 'Esc' key)
+document.addEventListener("fullscreenchange", handleFullscreenUI);
+document.addEventListener("webkitfullscreenchange", handleFullscreenUI);
+document.addEventListener("mozfullscreenchange", handleFullscreenUI);
+document.addEventListener("MSFullscreenChange", handleFullscreenUI);
+
+function handleFullscreenUI() {
+  const isFullscreen =
+    document.fullscreenElement ||
+    document.webkitFullscreenElement ||
+    document.mozFullScreenElement ||
+    document.msFullscreenElement;
+
+  if (isFullscreen) {
+    fullScreenBtn.style.display = "none";
+    exitFullScreenBtn.style.display = "block";
+  } else {
+    fullScreenBtn.style.display = "block";
+    exitFullScreenBtn.style.display = "none";
+  }
+}
