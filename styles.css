@@ -524,3 +524,14 @@ input:checked + .p-slider:before {
     bottom: 0;
   }
 }
+
+/* Accessibility Focus Styles */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.coin:focus-visible {
+  outline-offset: 10px;
+  border-radius: 50%;
+}

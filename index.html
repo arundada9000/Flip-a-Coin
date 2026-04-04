@@ -3,12 +3,15 @@
 
 <head>
     <meta name="google-adsense-account" content="ca-pub-1708134460872611">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1708134460872611" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coin Toss Simulator</title>
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="manifest" href="manifest.json">
+    <title>Coin Toss Simulator | Flip a Virtual Coin Online | Heads or Tails</title>
 
     <meta name="google-site-verification" content="u9MIvSvtdjNvbfiVKLGy8WuFdbVe-6XRKrV7KxNPRDs" />
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
     <meta name="description"
         content="Flip virtual coins with realistic animations and sound effects! Track heads, tails, and totals. Perfect for decision-making, teaching probability, or just having fun.">
@@ -17,7 +20,7 @@
     <meta name="author" content="Arun Neupane">
 
     <!-- Open Graph Meta Tags (for social media sharing) -->
-    <meta property="og:title" content="🎴 Coin Toss Simulator - Flip Coins Online">
+    <meta property="og:title" content="Coin Toss Simulator - Flip Coins Online">
     <meta property="og:description"
         content="Flip virtual coins with realistic animations and sound effects! Track heads, tails, and totals. Perfect for decision-making, teaching probability, or just having fun.">
     <meta property="og:type" content="website">
@@ -27,7 +30,7 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Coin Toss Simulator - Flip Coins Online">
+    <meta name="twitter:title" content="Coin Toss Simulator | Flip a Virtual Coin Online">
     <meta name="twitter:description"
         content="Not sure what to do ? Flip virtual coins with realistic animations and sound effects! Track heads, tails, and totals. Perfect for decision-making, teaching probability, or just having fun.">
     <meta name="twitter:image" content="https://easyflipping.netlify.app/images/coin-flipping.png">
@@ -79,70 +82,72 @@
 
 <body>
     <div class="premium-app" id="appFrame">
-        <button class="drawer-toggle" id="drawerToggle">⚙️ Settings</button>
+        <button class="drawer-toggle" id="drawerToggle" aria-label="Toggle Settings Menu" aria-expanded="false" aria-controls="sidebar">⚙️ Settings</button>
 
-        <aside class="control-sidebar" id="sidebar">
+        <aside class="control-sidebar" id="sidebar" role="complementary" aria-label="Game Controls">
             <div class="brand">
-                <img src="./images/coin.png" class="brand-logo" alt="Logo">
-                <div>
-                    <h2>Coin Toss</h2>
-                    <p>Simulator</p>
+                <img src="./images/coin.png" class="brand-logo" alt="Coin Toss Simulator Logo">
+                <h1 style="font-size: 1.5rem; margin: 0; line-height: 1.2;">Coin Toss<br><span style="font-size: 1rem; font-weight: normal; color: #a0a0b0;">Simulator</span></h1>
+            </div>
+
+            <div class="control-group">
+                <label id="materialLabel">Material</label>
+                <div class="material-picker" role="group" aria-labelledby="materialLabel">
+                    <button class="m-btn active" id="setGold" aria-pressed="true" aria-label="Set material to Gold">Gold</button>
+                    <button class="m-btn" id="setSilver" aria-pressed="false" aria-label="Set material to Silver">Silver</button>
                 </div>
             </div>
 
             <div class="control-group">
-                <label>Material</label>
-                <div class="material-picker">
-                    <button class="m-btn active" id="setGold">Gold</button>
-                    <button class="m-btn" id="setSilver">Silver</button>
-                </div>
+                <label id="actionsLabel">Actions</label>
+                <button id="tossButton" class="p-btn p-btn-primary" aria-label="Flip the last added coin">Flip Last</button>
+                <button id="tossAllButton" class="p-btn p-btn-outline" aria-label="Flip all active coins">Flip All</button>
             </div>
 
             <div class="control-group">
-                <label>Actions</label>
-                <button id="tossButton" class="p-btn p-btn-primary">Flip Last</button>
-                <button id="tossAllButton" class="p-btn p-btn-outline">Flip All</button>
-            </div>
-
-            <div class="control-group">
-                <label>Add (Press Enter)</label>
+                <label for="coinCount">Add (Press Enter)</label>
                 <div class="p-input-wrapper">
-                    <input type="number" id="coinCount" value="1" min="1" class="p-input">
-                    <button id="addCoinsButton" class="p-btn-add">+</button>
+                    <input type="number" id="coinCount" value="1" min="1" class="p-input" aria-label="Number of coins to add">
+                    <button id="addCoinsButton" class="p-btn-add" aria-label="Add coins">+</button>
                 </div>
             </div>
 
             <div class="control-group">
                 <div class="p-toggle-row">
-                    <span>Vertical Toss</span>
-                    <label class="p-switch">
-                        <input title="Toggle Style" type="checkbox" id="tossStyleToggle" checked>
-                        <span class="p-slider"></span>
+                    <span id="tossStyleLabel">Vertical Toss</span>
+                    <label class="p-switch" aria-labelledby="tossStyleLabel">
+                        <input title="Toggle Style" type="checkbox" id="tossStyleToggle" checked aria-label="Toggle vertical toss style">
+                        <span class="p-slider" aria-hidden="true"></span>
                     </label>
                 </div>
             </div>
+
+            <div class="control-group" id="installContainer" style="display: none; margin-top: 10px;">
+                <label>App</label>
+                <button id="installAppButton" class="p-btn p-btn-primary" aria-label="Install App for Offline Use" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); width: 100%;">Install App ⬇️</button>
+            </div>
         </aside>
 
-        <main class="arena">
-            <header class="arena-toolbar">
-                <div class="status-indicator">● Luck Ready</div>
+        <main class="arena" id="mainContent" role="main">
+            <header class="arena-toolbar" aria-label="Arena Toolbar">
+                <div class="status-indicator" role="status" aria-live="polite">● Luck Ready</div>
                 <div class="arena-actions">
-                    <button id="fullScreenIcon" class="icon-tool">Fullscreen ⛶</button>
-                    <button id="exitFullScreenIcon" class="icon-tool" style="display:none;">Exit ✕</button>
+                    <button id="fullScreenIcon" class="icon-tool" aria-label="Enter Fullscreen">Fullscreen ⛶</button>
+                    <button id="exitFullScreenIcon" class="icon-tool" style="display:none;" aria-label="Exit Fullscreen">Exit ✕</button>
                 </div>
             </header>
 
-            <div class="coin-surface" id="coinContainer">
-                <audio src="./Sounds/coin-flip-shimmer.mp3" id="flipSound"></audio>
-                <audio src="./Sounds/coin-spinning.mp3" id="spinSound"></audio>
+            <div class="coin-surface" id="coinContainer" aria-label="Area showing all coins" aria-live="polite">
+                <audio src="./Sounds/coin-flip-shimmer.mp3" id="flipSound" preload="auto"></audio>
+                <audio src="./Sounds/coin-spinning.mp3" id="spinSound" preload="auto"></audio>
             </div>
         </main>
 
-        <footer class="floating-stats">
-            <div class="stat"><small>Tosses</small><strong id="totalTossCount">0</strong></div>
-            <div class="stat"><small>Heads</small><strong id="headsCount">0</strong></div>
-            <div class="stat"><small>Tails</small><strong id="tailsCount">0</strong></div>
-            <div class="stat active"><small>Active</small><strong id="totalCoinsCount">1</strong></div>
+        <footer class="floating-stats" role="contentinfo" aria-label="Coin Toss Statistics" aria-live="polite">
+            <div class="stat"><small>Tosses</small><strong id="totalTossCount" aria-label="Total Tosses">0</strong></div>
+            <div class="stat"><small>Heads</small><strong id="headsCount" aria-label="Total Heads">0</strong></div>
+            <div class="stat"><small>Tails</small><strong id="tailsCount" aria-label="Total Tails">0</strong></div>
+            <div class="stat active"><small>Active</small><strong id="totalCoinsCount" aria-label="Total Active Coins">1</strong></div>
         </footer>
     </div>
     <script src="script.js"></script>

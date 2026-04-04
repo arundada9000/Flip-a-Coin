@@ -16,17 +16,24 @@ let heads = 0,
   totalTosses = 0,
   totalCoins = 0;
 
-drawerToggle.onclick = () => sidebar.classList.toggle("open");
+drawerToggle.onclick = () => {
+  const isOpen = sidebar.classList.toggle("open");
+  drawerToggle.setAttribute("aria-expanded", isOpen);
+};
 
 document.getElementById("setGold").onclick = () => {
   currentMaterial = "gold";
   document.getElementById("setGold").classList.add("active");
+  document.getElementById("setGold").setAttribute("aria-pressed", "true");
   document.getElementById("setSilver").classList.remove("active");
+  document.getElementById("setSilver").setAttribute("aria-pressed", "false");
 };
 document.getElementById("setSilver").onclick = () => {
   currentMaterial = "silver";
   document.getElementById("setSilver").classList.add("active");
+  document.getElementById("setSilver").setAttribute("aria-pressed", "true");
   document.getElementById("setGold").classList.remove("active");
+  document.getElementById("setGold").setAttribute("aria-pressed", "false");
 };
 
 coinCountInput.onkeypress = (e) => {
@@ -41,11 +48,20 @@ function addCoins() {
 function createCoin() {
   const coin = document.createElement("div");
   coin.className = `coin ${currentMaterial}`;
+  coin.setAttribute("role", "button");
+  coin.setAttribute("tabindex", "0");
+  coin.setAttribute("aria-label", "Toss this coin");
   coin.innerHTML = `
-        <div class="side heads">HEADS</div>
-        <div class="side tails">TAILS</div>
+        <div class="side heads" aria-hidden="true">HEADS</div>
+        <div class="side tails" aria-hidden="true">TAILS</div>
     `;
   coin.onclick = () => tossCoin(coin);
+  coin.onkeypress = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      tossCoin(coin);
+    }
+  };
   coinContainer.appendChild(coin);
   totalCoins++;
   totalCoinsCount.textContent = totalCoins;
@@ -141,3 +157,38 @@ function handleFullscreenUI() {
     exitFullScreenBtn.style.display = "none";
   }
 }
+
+// PWA Installation & Service Worker Logic
+const installContainer = document.getElementById("installContainer");
+const installAppButton = document.getElementById("installAppButton");
+let deferredPrompt;
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").then(
+      (registration) => console.log("ServiceWorker registration successful:", registration.scope),
+      (err) => console.log("ServiceWorker registration failed:", err)
+    );
+  });
+}
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installContainer.style.display = "block";
+});
+
+installAppButton.addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  console.log(`User response to the install prompt: ${outcome}`);
+  deferredPrompt = null;
+  installContainer.style.display = "none";
+});
+
+window.addEventListener("appinstalled", () => {
+  installContainer.style.display = "none";
+  deferredPrompt = null;
+  console.log("PWA was installed successfully");
+});

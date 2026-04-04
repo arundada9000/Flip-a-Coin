@@ -1,0 +1,16 @@
+{
+  "name": "Coin Toss Simulator",
+  "short_name": "Coin Toss",
+  "description": "Flip virtual coins with realistic animations and sound effects!",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0c111d",
+  "theme_color": "#1a1a2e",
+  "icons": [
+    {
+      "src": "./images/coin.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
+    }
+  ]
+}
