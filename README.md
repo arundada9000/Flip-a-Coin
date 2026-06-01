@@ -1,4 +1,4 @@
-# <img src="./images/coin-flipping.png" width="50" height="50"> Coin Toss Simulator
+﻿# <img src="./images/coin-flipping.png" width="50" height="50"> Coin Toss Simulator
 
 Welcome to the **Coin Toss Simulator**! This interactive web application allows you to simulate flipping coins with realistic animations and sound effects. Whether you're making decisions, teaching probability, or just having fun, this tool is perfect for you.
 
@@ -95,7 +95,7 @@ This project is hosted on **Netlify**. To deploy your own version:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 coin-toss-simulator/  
 ├── index.html # Main HTML file  
@@ -111,7 +111,7 @@ coin-toss-simulator/
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! If you'd like to improve this project, follow these steps:
 
@@ -123,7 +123,7 @@ Contributions are welcome! If you'd like to improve this project, follow these s
 
 ---
 
-## 📄 License
+##  License
 
 Feel Free to use it . I Arun Neupane hereby allow free use of this project.
 
@@ -138,8 +138,8 @@ Feel Free to use it . I Arun Neupane hereby allow free use of this project.
 
 ## Contact Me
 
-Hello! 👋  
-I’m **Arun Neupane** from **Nepal 🇳🇵**.  
+Hello!   
+I’m **Arun Neupane** from **Nepal **.  
 Open to collaboration, coding discussions, projects, or just a friendly hello.
 
 ---
@@ -158,4 +158,9 @@ Open to collaboration, coding discussions, projects, or just a friendly hello.
 **Location:** Nepal  
 _Let’s build something awesome together!_
 
-Enjoy flipping coins! 🎉
+Enjoy flipping coins! 
+---
+
+## License
+
+This project is for educational and personal learning purposes only. Commercial use, public deployment, or any revenue-generating use requires explicit written permission from the author. See [LICENSE](LICENSE) for details.
