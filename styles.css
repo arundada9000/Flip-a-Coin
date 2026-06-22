@@ -19,13 +19,15 @@ body {
   font-family: "Inter", sans-serif;
   background: var(--bg);
   color: var(--text);
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .premium-app {
   display: flex;
   height: 100vh;
+  position: relative;
 }
 
 /* Sidebar */
@@ -275,7 +277,7 @@ input:checked + .p-slider:before {
 
 /* Stats */
 .floating-stats {
-  position: fixed;
+  position: absolute;
   bottom: 30px;
   right: 30px;
   background: rgba(30, 41, 59, 0.8);
@@ -492,7 +494,7 @@ input:checked + .p-slider:before {
 /* Mobile Drawer Styles */
 .drawer-toggle {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 20px;
   left: 20px;
   z-index: 3000;
@@ -534,4 +536,103 @@ input:checked + .p-slider:before {
 .coin:focus-visible {
   outline-offset: 10px;
   border-radius: 50%;
+}
+
+/* ---------- Guide / article content below the app ---------- */
+.content-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 20px;
+}
+
+.content-card {
+  background: var(--sidebar);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+  line-height: 1.8;
+}
+
+.content-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.content-card h2 span {
+  color: var(--accent);
+}
+
+.content-card h3 {
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin: 28px 0 10px;
+}
+
+.content-card h4 {
+  font-size: 1rem;
+  margin: 18px 0 6px;
+}
+
+.content-card p,
+.content-card li {
+  color: var(--text-dim);
+  font-size: 0.98rem;
+  margin-bottom: 12px;
+}
+
+.content-card ul,
+.content-card ol {
+  padding-left: 22px;
+  margin-bottom: 14px;
+}
+
+.content-card li {
+  margin-bottom: 8px;
+}
+
+.content-card strong {
+  color: var(--text);
+}
+
+.content-card a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.content-card a:hover {
+  text-decoration: underline;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 24px 20px 36px;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.creator-credit {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.creator-credit a {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.creator-credit a:hover {
+  color: var(--accent);
+  text-decoration: underline;
 }
