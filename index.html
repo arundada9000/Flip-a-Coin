@@ -34,7 +34,6 @@
     <meta name="twitter:description"
         content="Not sure what to do ? Flip virtual coins with realistic animations and sound effects! Track heads, tails, and totals. Perfect for decision-making, teaching probability, or just having fun.">
     <meta name="twitter:image" content="https://easyflipping.netlify.app/images/coin-flipping.png">
-    <meta name="twitter:site" content="@YourTwitterHandle">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://easyflipping.netlify.app/images/coin-flipping.png">
@@ -68,13 +67,54 @@
   },
   "image": "https://easyflipping.netlify.app/images/coin-flipping.png",
   "datePublished": "2026-01-10",
-  "dateModified": "2026-01-10",
+  "dateModified": "2026-07-22",
   "inLanguage": "en",
   "interactionStatistic": {
     "@type": "InteractionCounter",
     "interactionType": { "@type": "UserInteraction" },
     "userInteractionCount": 0
   }
+}
+</script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this coin flip fair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Each flip uses the browser's pseudorandom number generator with an equal chance of heads or tails, and no physical wobble or weight bias. In that sense it is measurably fairer than flipping a real coin and catching it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I flip more than one coin at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Enter a number in the Add box to place multiple coins in the arena, then press Flip All. The heads, tails, and total counters track everything automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The site is an installable Progressive Web App. Use the Install button or your browser's Add to Home Screen option and it keeps working with no connection, sounds included."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is anything I do here tracked?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your flips happen entirely in your browser and are not sent anywhere. Counts reset when you refresh. See the privacy policy for full details, including advertising cookies."
+      }
+    }
+  ]
 }
 </script>
 
@@ -126,6 +166,10 @@
                 <label>App</label>
                 <button id="installAppButton" class="p-btn p-btn-primary" aria-label="Install App for Offline Use" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); width: 100%;">Install App ⬇️</button>
             </div>
+
+            <div class="creator-credit">
+                <a href="https://arunneupane.netlify.app/" target="_blank" rel="noopener" title="Visit the creator's website">Made by Arun Neupane</a>
+            </div>
         </aside>
 
         <main class="arena" id="mainContent" role="main">
@@ -150,6 +194,61 @@
             <div class="stat active"><small>Active</small><strong id="totalCoinsCount" aria-label="Total Active Coins">1</strong></div>
         </footer>
     </div>
+
+    <div class="content-wrap">
+        <article class="content-card">
+            <h2>Coin Flipping: <span>Fairer Than a Real Coin</span></h2>
+            <p>This simulator flips a virtual coin using your browser's random number generator, shows the result with a realistic animation, and keeps a running count of heads, tails, and total tosses. You can flip one coin or dozens at once, choose gold or silver, and install the whole thing as an app that works offline. But here is the surprising part: <strong>this digital coin is actually fairer than the one in your pocket.</strong></p>
+
+            <h3>Is a real coin flip really 50/50? Science says no</h3>
+            <p>Physicists Persi Diaconis, Susan Holmes, and Richard Montgomery analysed the physics of coin flipping in 2007 and predicted that a caught coin lands on <strong>the same side it started</strong> about 51% of the time, because a real flip includes a slight wobble (precession) that keeps the starting side up for a fraction longer. In 2023, a team led by Franti&scaron;ek Barto&scaron; put this to the test with an astonishing <strong>350,757 real coin flips</strong> by 48 people, and the data agreed: coins landed on their starting side about <strong>50.8%</strong> of the time.</p>
+            <p>That tiny edge matters more than it sounds. If you bet on the side that starts facing up in 1,000 flips, you'd expect to win roughly 8 more bets than you lose. Spinning a coin on a table is even worse: weight differences between the two faces can push the result far from 50/50. A simulated flip has none of these physical biases; each toss here is an independent event with a genuine 50% chance for each side.</p>
+
+            <h3>Why streaks happen (and why they fool people)</h3>
+            <p>Flip a coin 100 times and there is a very good chance you'll see a run of five heads in a row somewhere. That's not a broken coin; it's what real randomness looks like. Any specific run of 5 heads has a 1-in-32 chance, and across 100 flips there are 96 opportunities for one to appear. The <strong>gambler's fallacy</strong> is the belief that after several heads, tails becomes "due". It never does: every flip is independent, and the coin has no memory. Watching the counters on this page during a long session is a surprisingly effective way to feel that truth rather than just read it.</p>
+
+            <h3>Famous decisions made by coin toss</h3>
+            <ul>
+                <li><strong>Portland, Oregon got its name</strong> from a coin toss in 1845. Francis Pettygrove (from Portland, Maine) won against Asa Lovejoy (from Boston) and named the new city after his hometown.</li>
+                <li><strong>The Wright brothers</strong> flipped a coin in 1903 to decide who would attempt the first powered flight. Wilbur won the toss but stalled the Flyer; three days later Orville made history instead.</li>
+                <li><strong>Every NFL game and Super Bowl</strong> begins with a ceremonial coin toss to decide first possession, watched by millions.</li>
+            </ul>
+
+            <h3>Good uses for a coin flip</h3>
+            <ul>
+                <li><strong>Breaking a deadlock:</strong> when two options are genuinely equal, a coin ends the debate instantly and fairly.</li>
+                <li><strong>Teaching probability:</strong> flip many coins at once and watch the heads/tails counters drift toward the theoretical 50% as the sample grows. That is the law of large numbers in action.</li>
+                <li><strong>Revealing your true preference:</strong> a classic trick: flip the coin, then notice which side you <em>hope</em> for while it spins. You often have your answer before it lands.</li>
+                <li><strong>Games and forfeits:</strong> deciding who goes first, fairly, with sound effects for drama.</li>
+            </ul>
+
+            <h3>Frequently asked questions</h3>
+            <h4>Is this coin flip fair?</h4>
+            <p>Yes. Each flip uses the browser's pseudorandom number generator with an equal chance of heads or tails, and no physical wobble or weight bias. In that sense it's measurably fairer than flipping a real coin and catching it.</p>
+
+            <h4>Can I flip more than one coin at once?</h4>
+            <p>Yes. Enter a number in the "Add" box to place multiple coins in the arena, then press <strong>Flip All</strong>. The heads, tails, and total counters track everything automatically.</p>
+
+            <h4>Does it work offline?</h4>
+            <p>Yes. The site is an installable Progressive Web App. Use the Install button (or your browser's "Add to Home Screen") and it keeps working with no connection, sounds included.</p>
+
+            <h4>Is anything I do here tracked?</h4>
+            <p>Your flips happen entirely in your browser and are not sent anywhere. Counts reset when you refresh. See the <a href="./privacy.html">Privacy Policy</a> for full details, including advertising cookies.</p>
+
+            <p>Built and maintained by <strong>Arun Neupane</strong>, a web developer from Parbat, Nepal. Found a bug or want a feature? Reach me on the <a href="./contact.html">contact page</a>. I read every message myself.</p>
+        </article>
+    </div>
+
+    <footer class="site-footer">
+        <p>
+            <a href="./privacy.html">Privacy Policy</a> &middot;
+            <a href="./contact.html">Contact</a> &middot;
+            <a href="https://github.com/arundada9000/Flip-a-Coin" target="_blank" rel="noopener">Source Code</a>
+        </p>
+        <p>&copy; <span id="year">2026</span> <a href="https://arunneupane.netlify.app/" target="_blank" rel="noopener">Arun Neupane</a>. All rights reserved.</p>
+        <p>Reach me anytime: <a href="mailto:arunneupane0000@gmail.com">arunneupane0000@gmail.com</a></p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 
