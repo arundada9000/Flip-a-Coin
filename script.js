@@ -192,3 +192,7 @@ window.addEventListener("appinstalled", () => {
   deferredPrompt = null;
   console.log("PWA was installed successfully");
 });
+
+// Keep footer copyright year current
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
