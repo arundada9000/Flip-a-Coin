@@ -1,11 +1,14 @@
-const CACHE_NAME = 'cointoss-v1';
+const CACHE_NAME = 'cointoss-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
+  './privacy.html',
+  './contact.html',
   './styles.css',
   './script.js',
   './manifest.json',
   './images/coin.png',
+  './images/coin-flipping.png',
   './Sounds/coin-flip-shimmer.mp3',
   './Sounds/coin-spinning.mp3'
 ];
