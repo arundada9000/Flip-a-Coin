@@ -3,13 +3,6 @@
 User-agent: *
 Allow: /
 
-# Disallow crawling of unnecessary or non-HTML files
-Disallow: /sounds/
-Disallow: /images/
-Disallow: /assets/js/
-Disallow: /node_modules/
-Disallow: /tmp/
-
 # Sitemap for faster indexing
 Sitemap: https://easyflipping.netlify.app/sitemap.xml
 
