@@ -1,166 +1,127 @@
-﻿# <img src="./images/coin-flipping.png" width="50" height="50"> Coin Toss Simulator
+﻿# Coin Toss Simulator
 
-Welcome to the **Coin Toss Simulator**! This interactive web application allows you to simulate flipping coins with realistic animations and sound effects. Whether you're making decisions, teaching probability, or just having fun, this tool is perfect for you.
+**A coin flip for every decision you never wanted to make.**
 
-**Live Demo**: [https://easyflipping.netlify.app](https://easyflipping.netlify.app)
+Flip realistic coins with smooth 3D animations and sound effects. Decide, gamble, teach probability, or settle arguments - one toss at a time.
 
----
+## Screenshots
 
-## Preview
-
-<p align="center"> 
-<img src="./images/preview/img1.png" width=300>
-<img src="./images/preview/img2.png" width=300>
+<p align="center">
+  <img src="screenshots/cointoss-desktop.png" alt="Coin Toss Simulator - desktop view" width="720">
 </p>
-<p align="center"> 
-<img src="./images/preview/img3.png">
-<img src="./images/preview/img4.png">
+
+<p align="center">
+  <img src="screenshots/cointoss-mobile.png" alt="Coin Toss Simulator - mobile view" width="280">
 </p>
+
+## Live Demo
+
+Try it live: [Coin Toss Simulator](https://easyflipping.netlify.app)
+
+Works as an installable PWA - add it to your home screen and use it offline.
 
 ## Features
 
-- **Realistic Coin Toss**: Simulate flipping a coin with smooth animations.
-- **Multiple Coins**: Add and toss multiple coins at once.
-- **Toss Styles**:
-  - **In-Place Toss**: The coin spins in place.
-  - **Vertical Toss**: The coin flips into the air and lands.
-- **Full-Screen Mode**: Focus on the coins with a full-screen view.
-- **Sound Effects**: Enjoy immersive sound effects for flipping and landing.
-- **Statistics**:
-  - Track the number of heads and tails.
-  - View the total number of coins and tosses.
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices.
-
----
-
-## Technologies Used
-
-- **Frontend**:
-  - HTML5
-  - CSS3 (with animations and flexbox)
-  - JavaScript (for interactivity and logic)
-- **Hosting**: Netlify
-
----
+- **Realistic coin toss** - smooth 3D-style flip animation
+- **Multiple coins** - add and toss as many coins as you want at once
+- **Two toss styles**
+  - **In-Place Toss** - the coin spins in place
+  - **Vertical Toss** - the coin flips into the air and lands
+- **Full-screen mode** - focus on the coins
+- **Sound effects** - immersive flip and landing sounds
+- **Live statistics**
+  - Heads and tails counts
+  - Total coins and total tosses
+- **Responsive design** - desktop, tablet, and mobile ready
+- **PWA support** - installable and works offline via service worker
 
 ## How to Use
 
-1. **Toss a Single Coin**:
+1. **Toss a single coin** - click the Flip button, or touch the coin.
+2. **Add multiple coins** - enter a number and click +, or just click + to add one at a time.
+3. **Toss all coins** - click Flip All Coins.
+4. **Switch toss style** - toggle between In-Place Toss and Vertical Toss.
+5. **Full-screen mode** - click the full-screen icon to enter, and the close icon to exit.
+6. **View statistics** - check total coins, total tosses, heads, and tails at the bottom.
 
-   - Click the **Flip** button or Touch the coin to flip a single coin.
+## Tech Stack
 
-2. **Add Multiple Coins**:
+- **HTML5** - structure
+- **CSS3** - styling, animations, and flexbox layout
+- **JavaScript** - coin logic, animation, and interactivity
+- **Service Worker** - offline support and caching
+- **Netlify** - hosting and deployment
 
-   - Enter the number of coins in the input field and click **+** or just click **+** to add one coin.
+## Getting Started
 
-3. **Toss All Coins**:
+This is a static site. No build step, no package manager, no server needed.
 
-   - Click the **Flip All Coins** button to flip all coins at once.
+**Option 1:** Open `index.html` directly in any browser.
 
-4. **Switch Toss Style**:
+**Option 2:** Run a local server:
 
-   - Use the toggle switch to choose between **In-Place Toss** and **Vertical Toss**.
+```bash
+python -m http.server 8000
+```
 
-5. **Full-Screen Mode**:
+Then open [http://localhost:8000](http://localhost:8000).
 
-   - Click the **⛶** icon to enter full-screen mode.
-   - Click the **✖** icon to exit full-screen mode.
+## Project Structure
 
-6. **View Statistics**:
-   - Check the stats at the bottom of the screen for:
-     - Total Coins
-     - Total Tosses
-     - Heads Count
-     - Tails Count
+```
+.
+|-- index.html       Main HTML file
+|-- styles.css       Styling and animations
+|-- script.js        Coin toss logic and interactivity
+|-- Sounds/          Sound effects
+|   |-- coin-flip-shimmer.mp3
+|   |-- coin-spinning.mp3
+|-- images/          Coin images and previews
+|   |-- coin.png
+|   |-- coin-flipping.png
+|   |-- preview/     README preview images
+|-- screenshots/     README screenshots
+|-- sw.js            Service worker (PWA offline support)
+|-- manifest.json    PWA manifest
+|-- README.md        Documentation
+```
 
----
+## Contact
 
-## Design Highlights
+**Arun Neupane** - Frontend Developer, CTO and Lead Architect.
 
-- **Dynamic Background**: A gradient background that changes color over time.
-- **Realistic Coin Design**: 3D-style coins with heads and tails.
-- **Immersive Sound Effects**: Sound effects for flipping and landing.
-- **Responsive Layout**: Optimized for all screen sizes.
-
----
-
-## Deployment
-
-This project is hosted on **Netlify**. To deploy your own version:
-
-1. Fork this repository.
-2. Connect your GitHub account to Netlify.
-3. Deploy the repository to Netlify.
-4. Your site will be live at `https://your-site-name.netlify.app`.
-
----
-
-##  Project Structure
-
-coin-toss-simulator/  
-├── index.html # Main HTML file  
-├── styles.css # CSS for styling and animations  
-├── script.js # JavaScript for interactivity  
-├── Sounds/ # Sound effects for the coin toss  
-│ ├── coin-flip-shimmer.mp3  
-│ └── coin-spinning.mp3  
-├── images/ # Coin images  
-│ ├── coin.png  
-│ └── coin-flipping.png  
-└── README.md # Project documentation
-
----
-
-##  Contributing
-
-Contributions are welcome! If you'd like to improve this project, follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Open a pull request.
-
----
-
-##  License
-
-Feel Free to use it . I Arun Neupane hereby allow free use of this project.
-
----
-
-## Credits
-
-- **Developer**: Arun Neupane
-- **Inspiration**: Built for fun and learning!
-
----
-
-## Contact Me
-
-Hello!   
-I’m **Arun Neupane** from **Nepal **.  
-Open to collaboration, coding discussions, projects, or just a friendly hello.
-
----
+**"I like to code till I don't like to code. (It never happens.)"**
 
 ### Connect with Me
 
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-Chat-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/9779811420975)
-[![Facebook](https://img.shields.io/badge/Facebook-arundada9000-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/arundada9000)
-[![Instagram](https://img.shields.io/badge/Instagram-arundada9000-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/arundada9000)
-[![GitHub](https://img.shields.io/badge/GitHub-arundada9000-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/arundada9000)
-[![YouTube](https://img.shields.io/badge/YouTube-arundada9000-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@arundada9000)
-[![Email](https://img.shields.io/badge/Email-arunneupane0000@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:arunneupane0000@gmail.com)
+- **Website:** [arunneupane.vercel.app](https://arunneupane.vercel.app)
+- **GitHub:** [github.com/arundada9000](https://github.com/arundada9000)
+- **LinkedIn:** [linkedin.com/in/arundada9000](https://www.linkedin.com/in/arundada9000)
+- **X / Twitter:** [x.com/arundada9000](https://x.com/arundada9000)
+- **YouTube:** [youtube.com/@arundada9000](https://youtube.com/@arundada9000)
+- **Instagram:** [instagram.com/arundada9000](https://instagram.com/arundada9000)
+- **Facebook:** [facebook.com/arundada9000](https://facebook.com/arundada9000)
+- **Phone / WhatsApp:** [+977 9811420975](https://wa.me/9779811420975)
+- **Email:** [arunneupane0000@gmail.com](mailto:arunneupane0000@gmail.com)
 
----
+Open to collaboration, coding discussions, projects, or just a friendly hello.
 
-**Location:** Nepal  
-_Let’s build something awesome together!_
+## Contributing
 
-Enjoy flipping coins! 
----
+This project is proprietary software. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before doing anything.
+
+## Security
+
+Found a vulnerability? Please read [SECURITY.md](SECURITY.md) and report it privately - do not open a public issue.
 
 ## License
 
-This project is for educational and personal learning purposes only. Commercial use, public deployment, or any revenue-generating use requires explicit written permission from the author. See [LICENSE](LICENSE) for details.
+All rights reserved. This project is **not free for use** and every use requires explicit written permission from the copyright holder. See [LICENSE](LICENSE) for full terms.
+
+---
+
+*It's 50/50 until it isn't.*
+
+---
+
+**Built by Arun Neupane - © 2026 All Rights Reserved**
